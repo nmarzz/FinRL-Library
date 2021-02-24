@@ -55,9 +55,19 @@ def backtest_plot(
 
 
 def get_baseline(ticker, start, end):
-    dji = YahooDownloader(
-        start_date=start, end_date=end, ticker_list=[ticker]
-    ).fetch_data()
+    
+    if ticker == 'crypto':
+        print('*********')
+        
+    else:
+        dji = YahooDownloader(
+            start_date=start, end_date=end, ticker_list=[ticker]
+        ).fetch_data()
+
+    
+    print('here ' * 20)
+    print(dji.head())
+    
     return dji
 
 
